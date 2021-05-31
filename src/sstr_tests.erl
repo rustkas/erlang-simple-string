@@ -422,7 +422,8 @@ float_to_list_test_() ->
   ?_assertEqual("-9.2234e+18", sstr:float_to_list(-9223372036854775808.0)),  
   ?_assertEqual("-3.40e+38", sstr:float_to_list(-3.4E+38)),  
   ?_assertEqual("-1.0e-01", sstr:float_to_list(-1.0e-1)),
-  ?_assertEqual("-1.70e+308", sstr:float_to_list(-1.7E+308))
+  ?_assertEqual("-1.70e+308", sstr:float_to_list(-1.7E+308)),
+  ?_assertEqual("1.12", sstr:float_to_list(1.123456, 2)),
 ].
 
 fun_to_list_test_() ->

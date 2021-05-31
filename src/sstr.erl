@@ -97,7 +97,7 @@
 -export([join/2, words/1, words/2, chars/2, chars/3, copies/2, strip/1, strip/2]).
 -export([strip/3, left/2, left/3, right/2, right/3, centre/2, centre/3, reverse/1]).
 -export([reverse/2, to_float/1, to_integer/1, to_lower/1, to_upper/1]).
--export([integer_to_list/1, integer_to_list/2, float_to_list/1, fun_to_list/1]). 
+-export([integer_to_list/1, integer_to_list/2, float_to_list/1, float_to_list/2, fun_to_list/1]). 
 -export([list_to_atom/1, equal/2, rchr/2, rstr/2, span/2, cspan/2]).
 
 -type chardata() :: unicode:chardata().
@@ -982,6 +982,27 @@ float_to_list(Float) ->
         error:badarg -> 
             float_to_list_scientific(Float,4)
     end.
+
+%% @doc Converts a float to a string
+%% <br/>
+%% <b>Example:</b>
+%% ```
+%% 1> sstr:float_to_list(1.1232343, 2).
+%% "1.12"
+%% '''
+%% <b>See also:</b> 
+%% [http://erlang.org/doc/man/erlang.html#float_to_list-1 erlang:float_to_list/1], 
+%% [http://erlang.org/doc/man/erlang.html#float_to_list-2 erlang:float_to_list/2]. 
+%%
+%% @param Float float value
+%% @returns string
+
+-spec float_to_list(Float, Fraction) -> String when
+      Float :: float(),
+	  Fraction :: integer(),
+      String :: string().
+float_to_list(Float, Fraction) -> 
+    erlang:float_to_list(Float,[{decimals,Fraction},compact]).
 
 %% @doc Converts a float to a string using scientific option.
 %% @private
