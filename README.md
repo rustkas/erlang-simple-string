@@ -20,7 +20,7 @@ Build
 
 Run
 -----
-	$ rebar3 eunit -v --app simple_string
+	$ rebar3 eunit -v
 	
 Format
 -----
