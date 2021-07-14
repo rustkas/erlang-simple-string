@@ -18,7 +18,7 @@ Build
 -----
 	$ rebar3 compile
 
-Run
+Run EUnit tests
 -----
 	$ rebar3 eunit -v
 	
