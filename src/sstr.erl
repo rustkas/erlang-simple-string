@@ -115,7 +115,7 @@
 %% @returns length of a data list.
 
 -spec len(String) -> Length when
-      String:: chardata(),
+      String :: chardata(),
       Length :: non_neg_integer().
 len(String) -> string:len(String).
 
