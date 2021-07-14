@@ -11,7 +11,7 @@ The initial version is purely a wrapper for traditional list-based strings.  Fut
 
 The library is under the (2-clause) Simplified BSD license.
 
-=====
+------------------------
 
 
 Build
