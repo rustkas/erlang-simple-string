@@ -29,3 +29,11 @@ Format
 Generate documentation
 -----
 	$ rebar3 edoc
+
+Add dependency to your rebar3 project
+-----
+```
+{deps, [
+{sstr, {git, "git://github.com/rustkas/erlang-simple-string.git", {branch, "rebar3_way"}}}
+]}.
+```
