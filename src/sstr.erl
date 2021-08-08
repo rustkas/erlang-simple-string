@@ -100,6 +100,7 @@
 -export([integer_to_list/1, integer_to_list/2, float_to_list/1, float_to_list/2, fun_to_list/1]). 
 -export([list_to_atom/1, equal/2, rchr/2, rstr/2, span/2, cspan/2]).
 -export([run/4, replace/5, split/4]).
+-export([hex/1]).
 
 -type chardata() :: unicode:chardata().
 -type direction() :: string:direction().
@@ -1166,3 +1167,13 @@ split(Subject, RegexString, CompileOtions, SplitOtions) when is_list(CompileOtio
 	{ok, MP} = re:compile(RegexString, CompileOtions),
 	SplitList = re:split(Subject, MP, SplitOtions ++ [{return, list}]), 
 	SplitList.
+	
+%% @doc Convert integer value to the hex-string with #-prefix 
+%% @returns Return hex-string.
+
+-spec hex(Integer) -> Result
+    when Integer :: pos_integer(),
+         Result :: string().
+hex(Integer) ->
+    String = io_lib:fwrite("~.16X", [Integer,"#"]),
+    String.	

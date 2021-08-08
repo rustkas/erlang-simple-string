@@ -479,3 +479,8 @@ split_test_() ->
 [
   ?_assertEqual(["hello","hello"], sstr:split("hello;hello",";", [],[]))
 ].  
+
+hex_test_()->
+[
+  ?_assertEqual("#F", sstr:hex(15))
+].  
