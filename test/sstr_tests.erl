@@ -484,3 +484,8 @@ hex_test_()->
 [
   ?_assertEqual("#F", sstr:hex(15))
 ].  
+
+hex_list_test_()->
+[
+  ?_assertEqual("#FF", sstr:hex([255]))
+].

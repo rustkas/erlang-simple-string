@@ -20,7 +20,7 @@ Build
 
 Run EUnit tests
 -----
-	$ rebar3 eunit -v
+	$ rebar3 eunit
 	
 Format
 -----
