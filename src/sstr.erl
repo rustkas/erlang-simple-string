@@ -149,7 +149,7 @@
 
 -export([run/4, replace/5, split/4]).
 
--export([hex/1,hex/1]).
+-export([hex/1,hex/2]).
 
 -type chardata() :: unicode:chardata().
 
